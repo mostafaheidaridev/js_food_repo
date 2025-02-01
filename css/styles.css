@@ -1,0 +1,27 @@
+@import 'variables.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+
+body {
+    font-family: var(--fontMain);
+}
+
+nav{
+    ul{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        grid-area: 10px;
+
+        li{
+            list-style: none;
+            margin-right: 1rem;
+        }
+
+    }
+}
