@@ -1,10 +1,10 @@
 # Simple Food Recipes Frontend App
 
-A simple frontend app for food recipes that consumes two APIs. [![My Skills](https://skillicons.dev/icons?i=javascript&theme=dark&perline=15)](https://skillicons.dev)
+A simple frontend app for food recipes that consumes two APIs.  
 
 ## Tools
 
-- JavaScript
+- JavaScript  
 - CSS
 - HTML5
 
