@@ -9,8 +9,8 @@
         
         img {
             display: block;
-            width: var(--imgeThumbnDimantion);
-            height: var(--imgeThumbnDimantion);
+            width: var(--imageThumbnailDimension);
+            height: var(--imageThumbnailDimension);
             margin: 0 auto;
         }
         
@@ -31,11 +31,11 @@
         display: flex;
         flex-flow: row wrap;
         column-gap: 1rem;
-        max-width: calc(var(--cardWith) * 3 + 1rem * 2);
+        max-width: calc(var(--cardWidth) * 3 + 1rem * 2);
         margin: auto;
     }
     article  {
-        width: var(--cardWith);
+        width: var(--cardWidth);
         border: solid thin var(--colorSecondary);
         border-radius: 1rem;
         padding: 0 1rem 1.5rem 1rem;
