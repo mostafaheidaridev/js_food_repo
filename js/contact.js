@@ -5,16 +5,22 @@ document.querySelector('#frmContact').addEventListener('submit', (e) => {
     const email = e.target.txtEmail.value;
     const comments = e.target.txtComments.value;
 
-    const submittedInfo = `
-        Thank you for your message. We will get back to you shortly.
+    const model = document.querySelector('#contact_message');
 
-        Registered information:
-        - Name: ${name}
-        - Email: ${email}
-        - Comments: ${comments}
-    `;
+    model.querySelector('#name').innerText = name;
+    model.querySelector('#email').innerText = email;
+    model.querySelector('#comments').innerText = comments;
 
-    alert(submittedInfo);
+    model.showModal();
 
-    window.location.replace('index.html');
+    model.focus();
+
+    model.querySelector('.close').addEventListener('click', () => {
+        model.close();
+    });
+    model.addEventListener('click', () => {
+        window.location.replace('index.html');
+    }); // Added a closing parenthesis here
+
+    // window.location.replace('index.html');
 });

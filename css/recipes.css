@@ -9,6 +9,8 @@
         
         img {
             display: block;
+            width: var(--imgeThumbnDimantion);
+            height: var(--imgeThumbnDimantion);
             margin: 0 auto;
         }
         
@@ -23,5 +25,20 @@
                 background-color: var(--colorSecondary);
             }
         }
+    }
+
+    @media (min-width: 560px) {
+        display: flex;
+        flex-flow: row wrap;
+        column-gap: 1rem;
+        max-width: calc(var(--cardWith) * 3 + 1rem * 2);
+        margin: auto;
+    }
+    article  {
+        width: var(--cardWith);
+        border: solid thin var(--colorSecondary);
+        border-radius: 1rem;
+        padding: 0 1rem 1.5rem 1rem;
+        
     }
 }
