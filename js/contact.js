@@ -5,22 +5,24 @@ document.querySelector('#frmContact').addEventListener('submit', (e) => {
     const email = e.target.txtEmail.value;
     const comments = e.target.txtComments.value;
 
-    const model = document.querySelector('#contact_message');
+    const modal = document.querySelector('#contact_message');
+    modal.querySelector('#name').innerText = name;
+    modal.querySelector('#email').innerText = email;
+    modal.querySelector('#comments').innerText = comments;
 
-    model.querySelector('#name').innerText = name;
-    model.querySelector('#email').innerText = email;
-    model.querySelector('#comments').innerText = comments;
+    modal.showModal();
+    modal.focus();
 
-    model.showModal();
-
-    model.focus();
-
-    model.querySelector('.close').addEventListener('click', () => {
-        model.close();
+    modal.querySelector('.close').addEventListener('click', function() {
+        this.parentElement.parentElement.close();
     });
-    model.addEventListener('click', () => {
-        window.location.replace('index.html');
-    }); // Added a closing parenthesis here
 
-    // window.location.replace('index.html');
+    // Faster and less cumbersome, but sometimes you don't have the element you want to operate with
+    // modal.querySelector('.close').addEventListener('click', () => {
+    //     modal.close();
+    // });
+
+    modal.addEventListener('close', () => {
+        window.location.replace('index.html');
+    });
 });

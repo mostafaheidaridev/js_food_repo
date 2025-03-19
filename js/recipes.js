@@ -2,8 +2,7 @@ import { BASE_URL } from './info.js';
 
 const DEFAULT_RECIPES = 10;
 
-//showRandomRecipesWithInnerHTML: This method adds HTML code to the page one by one, which is simple but can slow down the page when many items are added.
-
+// eslint-disable-next-line no-unused-vars
 const showRandomRecipesWithInnerHTML = (numRecipes = DEFAULT_RECIPES) => {
 
     for (let index = 0; index < numRecipes; index++) {
@@ -29,9 +28,7 @@ const showRandomRecipesWithInnerHTML = (numRecipes = DEFAULT_RECIPES) => {
     }
 };
 
-
-//showRandomRecipesWithInnerHTMLAndOnePageRefresh: This method builds a long HTML string and updates the page repeatedly, which may still slow the page down.
-
+// eslint-disable-next-line no-unused-vars
 const showRandomRecipesWithInnerHTMLAndOnePageRefresh = async (numRecipes = DEFAULT_RECIPES) => {
 
     let recipeList = '';
@@ -60,9 +57,7 @@ const showRandomRecipesWithInnerHTMLAndOnePageRefresh = async (numRecipes = DEFA
     }
 };
 
-//showRandomRecipesWithCreateElement: This method creates each element one by one and then adds them all at once, making the update smoother and faster.
-
-
+// eslint-disable-next-line no-unused-vars
 const showRandomRecipesWithCreateElement = async (numRecipes = DEFAULT_RECIPES) => {
 
     const fragment = document.createDocumentFragment();
@@ -107,10 +102,6 @@ const showRandomRecipesWithCreateElement = async (numRecipes = DEFAULT_RECIPES) 
     document.querySelector('#recipe-list').append(fragment);
 };
 
-
-// best way to do
-//showRandomRecipes: This method uses a pre-made template, fills it with data, and adds it all at once, which is fast and keeps the code organized.
-
 const showRandomRecipes = async (numRecipes = DEFAULT_RECIPES) => {
 
     const fragment = document.createDocumentFragment();
@@ -131,6 +122,10 @@ const showRandomRecipes = async (numRecipes = DEFAULT_RECIPES) => {
 
             card.querySelector('.pill:first-of-type').innerText = data.strCategory;
             card.querySelector('.pill:last-of-type').innerText = data.strArea;
+
+            card.querySelectorAll('a').forEach(link => {
+                link.href = `recipe.htm?id=${data.idMeal}`;
+            });
 
             fragment.append(card);
         })
